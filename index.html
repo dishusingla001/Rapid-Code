@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fortunez - Home</title>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="home_style.css" />
+    <!-- FAVICON -->
+    <link rel="icon" href="./favicon.png" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="masterContainer">
+        <div class="headerItems">
+          <a href="./index.html">
+            <img src="./Graphic designing/logo_small.png" id="logo" />
+          </a>
+        </div>
+        <div class="headerItems">
+          <p id="motto">OVER 70 YEARS OF TRUST</p>
+        </div>
+        <div class="headerItems">
+          <button id="logging">
+            <a href="./login.html">SIGN IN</a>
+          </button>
+        </div>
+      </div>
+    </header>
+    <hr />
+
+    <!-- Navigation -->
+    <nav>
+      <div class="masterContainer">
+        <button class="quickLinks">
+          <a href="./activeNow.html">ACTIVE NOW</a>
+        </button>
+        <button class="quickLinks">
+          <a href="./results.html">RESULTS</a>
+        </button>
+        <button class="quickLinks">
+          <a href="./categories2.html">CATEGORIES</a>
+        </button>
+        <button class="quickLinks">
+          <a href="./aboutUs.html">ABOUT US</a>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Scrolling Carousel -->
+    <div class="masterContainer">
+      <figcaption>today's top bids</figcaption>
+      <div class="scroll-box">
+        <div class="scroll-container">
+          <div>
+            <img src="./Graphic designing/car.png" />
+            <p>1965 Luxury car</p>
+          </div>
+          <div>
+            <img src="./Graphic designing/radio.png" />
+            <p>1960s stereo</p>
+          </div>
+          <div>
+            <img src="./Graphic designing/watch.png" />
+            <p>Luxury watch</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bento-Style Layout -->
+    <div class="masterContainer">
+      <h1>Fortunes: where tradition meets modern bidding</h1>
+      <div class="images">
+        <img src="./Graphic designing/aboutUs/brothers.png" alt="" />
+        <img src="./Graphic designing/aboutUs/home.png" alt="" />
+        <img src="./Graphic designing/aboutUs/people.png" alt="" />
+        <img src="./Graphic designing/aboutUs/speech.jpg" alt="" />
+      </div>
+      <div class="images">
+        <img
+          src="./Graphic designing/aboutUs/about_us_bill_putnam_@2x.jpg"
+          alt=""
+          id="longImage"
+        />
+      </div>
+      <div class="about-section">
+        <h3>founded in 1942</h3>
+        <p>
+          Established by two brothers, Richard and William Hart,
+          <strong>Fortunes</strong> began as a modest auction house in 1942...
+        </p>
+      </div>
+    </div>
+
+    <!-- Parallax Section -->
+    <div class="parallax"></div>
+
+    <!-- React Auction Grid -->
+    <div id="root"></div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="masterContainer">
+        <div class="footerGrids">
+          <h3>Newsletter</h3>
+          <hr />
+          <div class="newsletter">
+            <input type="text" placeholder="enter your email" />
+            <button><a href="">subscribe</a></button>
+          </div>
+        </div>
+        <div class="footerGrids">
+          <h3>About</h3>
+          <hr />
+          <a href="./aboutUs.html">About Us</a>
+          <a href="">Careers</a>
+          <a href="">Legal</a>
+          <a href="">Privacy Policy</a>
+          <a href="">Downloads</a>
+        </div>
+        <div class="footerGrids">
+          <h3>Support</h3>
+          <hr />
+          <a href="">Customer Support</a>
+          <a href="">FAQ</a>
+          <a href="">Visit Fortunez Forum</a>
+        </div>
+        <p>&copy; All rights reserved</p>
+      </div>
+    </footer>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <label for="themeToggle">Dark Mode</label>
+      <input type="checkbox" id="themeToggle" />
+    </div>
+<!-- Header Link Example -->
+<header>
+    <div class="headerItems">
+      <a href="./index.html">
+        <img src="./Graphic designing/logo_small.png" id="logo" />
+      </a>
+    </div>
+  </header>
+  
+  <!-- Navigation Link Example -->
+  <nav>
+    <button class="quickLinks">
+      <a href="./activeNow.html">ACTIVE NOW</a>
+    </button>
+  </nav>
+  
+  <!-- Footer Link Example -->
+  <footer>
+    <div class="footerGrids">
+      <a href="./aboutUs.html">About Us</a>
+    </div>
+  </footer>
+  
+  <!-- Button Link Example -->
+  <button id="logging">
+    <a href="./login.html">SIGN IN</a>
+  </button>
+    <!-- JavaScript -->
+    <script src="./themeToggle.js"></script>
+    <script src="./carousel.js"></script>
+    <!-- React -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="./App.js"></script>
+    <script>
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
+</html>

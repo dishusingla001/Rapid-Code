@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortunez - Signup</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styleSheets/loginstyle2.css">
+    <link rel="icon" href="./favicon.png" type="image/x-icon" />
+</head>
+<body>
+    <main>
+        <div class="masterContainer">
+            <div id="loginbox">
+                <div class="boxArea" id="graphic">
+                    <img src="au.jpg" alt="graph" id="graphicImage">
+                    <p>it's going to be exciting</p>
+                </div>
+                <div class="boxArea" id="LoginArea">
+                    <form>
+                        <div class="boxItems">
+                            <img src="logo.jpg" alt="logo">
+                        </div>
+                        <div class="boxItems">
+                            <p>Welcome to Fortunez</p>
+                        </div>
+                        <!-- Username Input -->
+                        <div class="boxItems inputs">
+                            <label for="username">username</label>       
+                            <input type="text" id="username" required>
+                        </div>
+                        <!-- Password Input -->
+                        <div class="boxItems inputs">
+                            <label for="password">password</label>  
+                            <input type="password" id="password" required>
+                        </div>
+                        <!-- Confirm Password Input -->
+                        <div class="boxItems inputs">
+                            <label for="confirmPassword">confirm password</label>  
+                            <input type="password" id="confirmPassword" required>
+                        </div>
+                        <div class="boxItems">                            
+                            <input type="submit" value="SIGN UP" id="submitButton">   
+                        </div>
+                        <div class="boxItems" id="log-on">
+                            <p>
+                                Already have an account? <a href="./login.html">Sign in</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        let form = document.querySelector("form");
+    
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+    
+            // Get form data
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+    
+            // Validate password match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+    
+            // Create user object
+            let user = {
+                username: username,
+                password: password,
+            };
+    
+            // Save user data to localStorage
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            users.push(user);
+            localStorage.setItem("users", JSON.stringify(users));
+    
+            // Alert user about successful signup
+            alert("Your account has been created. Please Login to your account.");
+    
+            // Redirect to login page (optional)
+            window.location.href = "./login.html";
+    
+            // Clear the form
+            form.reset();
+        });
+    </script>
+    
+</body>
+</html>

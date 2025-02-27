@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortunez - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="login.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styleSheets/loginstyle2.css">
+    <link rel="icon" href="./favicon.png" type="image/x-icon" />
+</head>
+<body>
+    <main>
+        <div class="masterContainer">
+            <div id="loginbox">
+                <div class="boxArea" id="graphic">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSZow-UC3phxDuYg1uIV--i0RqvhjYDdDhaA&s" alt="tyghu" id="graphicImage">
+                    <p>it's good to have you back</p>
+                </div>
+                <div class="boxArea" id="LoginArea">
+                    <form id="loginForm">
+                        <div class="boxItems">
+                            <img src="logo.jpg" alt="rtyu">
+                        </div>
+                        <div class="boxItems">
+                            <p>Welcome to Fortunez</p>
+                        </div>
+                        <div class="boxItems inputs">
+                            <label for="username">username</label>       
+                            <input type="text" id="username" required>
+                        </div>
+                        <div class="boxItems inputs">
+                            <label for="pword">password</label>  
+                            <input type="password" id="pword" required>
+                        </div>
+                        <div class="boxItems">
+                            <a href="" id="forgot"><p>forgot password?</p></a>
+                        </div>
+                        <div class="boxItems">                            
+                            <input type="submit" value="SIGN IN" id="submitButton">      
+                        </div>
+                        <div class="boxItems" id="log-on">
+                            <p>New to Fortunez? <a href="./signup.html">Create Account</a></p>
+                            <button class="theme-toggle">🌓</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Attach event listener to the form
+        let form = document.getElementById("loginForm");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form data
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("pword").value;
+
+            // Retrieve stored users from localStorage
+            let storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+            // Check if the user exists and password matches
+            let userFound = storedUsers.find(
+                (user) => user.username === username && user.password === password
+            );
+
+            if (userFound) {
+                // alert(Login successful! Welcome back, ${userFound.username});
+                // Redirect to the index page
+                window.location.href = "index.html";
+            } else {
+                alert("Login failed! Invalid username or password.");
+            }
+        });
+    </script>
+    <script src="login.js"></script>
+</body>
+</html>
