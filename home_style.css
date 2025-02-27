@@ -13,6 +13,12 @@ body {
     margin: 0 auto;
     padding: 20px;
   }
+
+  .images img{
+    height: 250px;
+    width: 250px;
+    border-radius: 20px;
+  }
   
   /* Header Styles */
   header {
@@ -66,11 +72,22 @@ body {
   .scroll-box {
     overflow: hidden;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    
   }
   
+  .scroll-box img{
+    height: 350px;
+    width: 350px;
+    border-radius: 20px;
+    border: black 2px;
+  }
   .scroll-container {
     display: flex;
-    animation: scroll 20s linear infinite;
+    animation: scroll 10s linear infinite;
+    justify-content: space-between ;
+    gap: 30px;
   }
   
   @keyframes scroll {
